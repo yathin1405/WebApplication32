@@ -1,0 +1,39 @@
+﻿@model IEnumerable<WebApplication32.Models.UserTour>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Num_Adults)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Num_Kids)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Num_Adults)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Num_Kids)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UserID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UserID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UserID })
+        </td>
+    </tr>
+}
+
+</table>
